@@ -1,37 +1,37 @@
-#include "Cat.hpp"
+#include "WrongCat.hpp"
 
-#include "Animal.hpp"
+#include "WrongAnimal.hpp"
 
 // Default constructor
-Cat::Cat() : Animal()
+WrongCat::WrongCat() : WrongAnimal()
 {
 	type = "Cat";
 	std::cout << type << " default constructor called" << std::endl;
 }
 
 // Copy constructor
-Cat::Cat(const Cat& other) : Animal(other)
+WrongCat::WrongCat(const WrongCat& other) : WrongAnimal(other)
 {
-	std::cout << "Cat copy constructor called" << std::endl;
+	std::cout << "WrongCat copy constructor called" << std::endl;
 }
 
 // Copy assignment operator
-Cat& Cat::operator=(const Cat& other)
+WrongCat& WrongCat::operator=(const WrongCat& other)
 {
-	std::cout << "Cat copy assignment operator called" << std::endl;
+	std::cout << "WrongCat copy assignment operator called" << std::endl;
 	if (this != &other)
-		Animal::operator=(other);
+		WrongAnimal::operator=(other);
 	return *this;
 }
 
 // Destructor
-Cat::~Cat()
+WrongCat::~WrongCat()
 {
-	std::cout << "Cat destructor called" << std::endl;
+	std::cout << "WrongCat destructor called" << std::endl;
 }
 
 // Public methods implementation
-void Cat::makeSound() const
+void WrongCat::makeSound() const
 {
 	std::cout << "miau" << std::endl;
 }

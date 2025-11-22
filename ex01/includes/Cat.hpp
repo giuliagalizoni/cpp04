@@ -3,14 +3,13 @@
 
 # include <iostream>
 # include <string>
-# include <Animal.hpp>
+# include "Animal.hpp"
+# include "Brain.hpp"
 
 class Cat : public Animal
 {
 	private:
-
-	protected:
-
+		Brain *_brain;
 	public:
 		Cat();
 		Cat(const Cat& other);
