@@ -1,14 +1,14 @@
-#include "../includes/Animal.hpp"
+#include "../includes/AAnimal.hpp"
 #include "../includes/Dog.hpp"
 #include "../includes/Cat.hpp"
 
 int main()
 {
-	// Animal cannot be instanciated - Does not compile tests:
-	// Animal animal;
-	// Animal *animal = new Animal();
+	// AAnimal cannot be instanciated - Does not compile tests:
+	// AAnimal animal;
+	// AAnimal *animal = new AAnimal();
 
-	Animal *dog = new Dog;
+	AAnimal *dog = new Dog;
 	dog->makeSound();
 	delete dog;
 

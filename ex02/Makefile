@@ -7,7 +7,7 @@ INC_DIR = includes
 OBJ_DIR = obj
 
 SRCS = main.cpp \
-		Animal.cpp \
+		AAnimal.cpp \
 		Dog.cpp \
 		Cat.cpp \
 		Brain.cpp

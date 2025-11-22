@@ -1,10 +1,10 @@
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef AANIMAL_HPP
+# define AANIMAL_HPP
 
 # include <iostream>
 # include <string>
 
-class Animal
+class AAnimal
 {
 	private:
 
@@ -13,10 +13,10 @@ class Animal
 
 	public:
 
-		Animal();
-		Animal(const Animal& other);
-		Animal& operator=(const Animal& other);
-		virtual ~Animal();
+		AAnimal();
+		AAnimal(const AAnimal& other);
+		AAnimal& operator=(const AAnimal& other);
+		virtual ~AAnimal();
 
 		// Public methods
 		virtual void	makeSound() const = 0;
