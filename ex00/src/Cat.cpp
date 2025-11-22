@@ -1,6 +1,4 @@
-#include "Cat.hpp"
-
-#include "Animal.hpp"
+#include "../includes/Cat.hpp"
 
 // Default constructor
 Cat::Cat() : Animal()

@@ -1,7 +1,5 @@
 #include "WrongCat.hpp"
 
-#include "WrongAnimal.hpp"
-
 // Default constructor
 WrongCat::WrongCat() : WrongAnimal()
 {
