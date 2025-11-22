@@ -18,7 +18,7 @@ class Cat : public Animal
 
 		// Public methods
 		void	makeSound() const;
-		// Getters and setters
+		Brain*	getBrain() const;
 };
 
 #endif

@@ -18,8 +18,8 @@ class Brain
 		~Brain();
 
 		// Public methods
-
-		// Getters and setters
+		void setIdea(int index, const std::string& idea);
+		std::string getIdea(int index) const;
 };
 
 #endif
