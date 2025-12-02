@@ -7,12 +7,12 @@
 void subjectTests()
 {
 	std::cout << "\n========== SUBJECT TESTS ==========" << std::endl;
-	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
+	const Animal *meta = new Animal();
+	const Animal *j = new Dog();
+	const Animal *i = new Cat();
 	std::cout << j->getType() << " " << std::endl;
 	std::cout << i->getType() << " " << std::endl;
-	i->makeSound(); //will output the cat sound!
+	i->makeSound(); // will output the cat sound!
 	j->makeSound();
 	meta->makeSound();
 
@@ -24,12 +24,12 @@ void subjectTests()
 void wrongAnimalTests()
 {
 	std::cout << "\n========== WRONG ANIMAL TESTS ==========" << std::endl;
-	const WrongAnimal* meta = new WrongAnimal();
-	const Animal* j = new Dog();
-	const WrongAnimal* i = new WrongCat();
+	const WrongAnimal *meta = new WrongAnimal();
+	const Animal *j = new Dog();
+	const WrongAnimal *i = new WrongCat();
 	std::cout << j->getType() << " " << std::endl;
 	std::cout << i->getType() << " " << std::endl;
-	i->makeSound(); //will NOT output the cat sound (no virtual)
+	i->makeSound(); // will NOT output the cat sound (no virtual)
 	j->makeSound();
 	meta->makeSound();
 
@@ -84,7 +84,7 @@ void polymorphismTests()
 	std::cout << "\n========== POLYMORPHISM TESTS ==========" << std::endl;
 
 	std::cout << "\n--- Creating array of Animal pointers ---" << std::endl;
-	const Animal* animals[4];
+	const Animal *animals[4];
 	animals[0] = new Animal();
 	animals[1] = new Dog();
 	animals[2] = new Cat();
@@ -107,17 +107,17 @@ void getTypeTests()
 {
 	std::cout << "\n========== GET TYPE TESTS ==========" << std::endl;
 
-	Animal* animal = new Animal();
-	Dog* dog = new Dog();
-	Cat* cat = new Cat();
+	Animal *animal = new Animal();
+	Dog *dog = new Dog();
+	Cat *cat = new Cat();
 
 	std::cout << "Animal type: " << animal->getType() << std::endl;
 	std::cout << "Dog type: " << dog->getType() << std::endl;
 	std::cout << "Cat type: " << cat->getType() << std::endl;
 
 	std::cout << "\n--- Testing getType through base pointer ---" << std::endl;
-	Animal* polymorphicDog = new Dog();
-	Animal* polymorphicCat = new Cat();
+	Animal *polymorphicDog = new Dog();
+	Animal *polymorphicCat = new Cat();
 
 	std::cout << "Polymorphic Dog type: " << polymorphicDog->getType() << std::endl;
 	std::cout << "Polymorphic Cat type: " << polymorphicCat->getType() << std::endl;
@@ -132,15 +132,16 @@ void getTypeTests()
 void wrongAnimalPolymorphismTests()
 {
 	std::cout << "\n========== WRONG ANIMAL POLYMORPHISM TESTS ==========" << std::endl;
-	std::cout << "Demonstrating the difference between virtual and non-virtual methods\n" << std::endl;
+	std::cout << "Demonstrating the difference between virtual and non-virtual methods\n"
+			  << std::endl;
 
 	std::cout << "--- Correct polymorphism (Animal with virtual) ---" << std::endl;
-	Animal* correctCat = new Cat();
+	Animal *correctCat = new Cat();
 	std::cout << "Type: " << correctCat->getType() << " - Sound: ";
 	correctCat->makeSound();
 
 	std::cout << "\n--- Incorrect polymorphism (WrongAnimal without virtual) ---" << std::endl;
-	WrongAnimal* wrongCat = new WrongCat();
+	WrongAnimal *wrongCat = new WrongCat();
 	std::cout << "Type: " << wrongCat->getType() << " - Sound: ";
 	wrongCat->makeSound();
 

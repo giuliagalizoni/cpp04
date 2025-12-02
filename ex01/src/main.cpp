@@ -28,7 +28,7 @@ void deepCopyTestDog()
 	std::cout << "\n========== DEEP COPY TEST - DOG ==========" << std::endl;
 
 	std::cout << "\n--- Creating original Dog ---" << std::endl;
-	Dog* originalDog = new Dog();
+	Dog *originalDog = new Dog();
 
 	std::cout << "\n--- Setting ideas in original Dog's brain ---" << std::endl;
 	originalDog->getBrain()->setIdea(0, "I love bones");
@@ -41,7 +41,7 @@ void deepCopyTestDog()
 	std::cout << "  Idea 2: " << originalDog->getBrain()->getIdea(2) << std::endl;
 
 	std::cout << "\n--- Creating copy using copy constructor ---" << std::endl;
-	Dog* copiedDog = new Dog(*originalDog);
+	Dog *copiedDog = new Dog(*originalDog);
 
 	std::cout << "\nCopied Dog's ideas (should be same):" << std::endl;
 	std::cout << "  Idea 0: " << copiedDog->getBrain()->getIdea(0) << std::endl;

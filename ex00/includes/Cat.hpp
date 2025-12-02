@@ -1,25 +1,20 @@
 #ifndef CAT_HPP
-# define CAT_HPP
+#define CAT_HPP
 
-# include <iostream>
-# include <string>
-# include "Animal.hpp"
+#include <iostream>
+#include <string>
+#include "Animal.hpp"
 
 class Cat : public Animal
 {
-	private:
+public:
+	Cat();
+	Cat(const Cat &other);
+	Cat &operator=(const Cat &other);
+	~Cat();
 
-	protected:
-
-	public:
-		Cat();
-		Cat(const Cat& other);
-		Cat& operator=(const Cat& other);
-		~Cat();
-
-		// Public methods
-		void	makeSound() const;
-		// Getters and setters
+	// Public methods
+	void makeSound() const;
 };
 
 #endif

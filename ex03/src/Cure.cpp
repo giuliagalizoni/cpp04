@@ -8,14 +8,14 @@ Cure::Cure() : AMateria("cure")
 }
 
 // Copy constructor
-Cure::Cure(const Cure& other) : AMateria(other)
+Cure::Cure(const Cure &other) : AMateria(other)
 {
 	std::cout << "Cure copy constructor called" << std::endl;
 	*this = other;
 }
 
 // Copy assignment operator
-Cure& Cure::operator=(const Cure& other)
+Cure &Cure::operator=(const Cure &other)
 {
 	std::cout << "Cure copy assignment operator called" << std::endl;
 	if (this != &other)
@@ -31,13 +31,13 @@ Cure::~Cure()
 
 // Public methods implementation
 
-AMateria* Cure::clone() const
+AMateria *Cure::clone() const
 {
 	std::cout << "Cure clone function called" << std::endl;
 	return new Cure(*this);
 }
 
-void Cure::use(ICharacter& target)
+void Cure::use(ICharacter &target)
 {
 	std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
 }

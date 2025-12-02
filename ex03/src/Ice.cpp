@@ -8,14 +8,14 @@ Ice::Ice() : AMateria("ice")
 }
 
 // Copy constructor
-Ice::Ice(const Ice& other) : AMateria(other)
+Ice::Ice(const Ice &other) : AMateria(other)
 {
 	std::cout << "Ice copy constructor called" << std::endl;
 	*this = other;
 }
 
 // Copy assignment operator
-Ice& Ice::operator=(const Ice& other)
+Ice &Ice::operator=(const Ice &other)
 {
 	std::cout << "Ice copy assignment operator called" << std::endl;
 	if (this != &other)
@@ -31,13 +31,13 @@ Ice::~Ice()
 
 // Public methods implementation
 
-AMateria* Ice::clone() const
+AMateria *Ice::clone() const
 {
 	std::cout << "Ice clone function called" << std::endl;
 	return new Ice(*this);
 }
 
-void Ice::use(ICharacter& target)
+void Ice::use(ICharacter &target)
 {
 	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
 }

@@ -7,14 +7,14 @@ Animal::Animal()
 }
 
 // Copy constructor
-Animal::Animal(const Animal& other)
+Animal::Animal(const Animal &other)
 {
 	std::cout << "Animal copy constructor called" << std::endl;
 	*this = other;
 }
 
 // Copy assignment operator
-Animal& Animal::operator=(const Animal& other)
+Animal &Animal::operator=(const Animal &other)
 {
 	std::cout << "Animal copy assignment operator called" << std::endl;
 	if (this != &other)
@@ -29,7 +29,7 @@ Animal::~Animal()
 }
 
 // Public methods implementation
-void	Animal::makeSound() const
+void Animal::makeSound() const
 {
 	std::cout << "[inaudible]" << std::endl;
 }

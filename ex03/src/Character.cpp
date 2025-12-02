@@ -8,14 +8,14 @@ Character::Character() : _droppedItems(NULL)
 		_inventory[i] = NULL;
 }
 
-Character::Character(std::string const& name) : _name(name), _droppedItems(NULL)
+Character::Character(std::string const &name) : _name(name), _droppedItems(NULL)
 {
 	std::cout << "Character constructor called for " << _name << std::endl;
 	for (int i = 0; i < 4; i++)
 		_inventory[i] = NULL;
 }
 // Copy constructor
-Character::Character(const Character& other) : _name(other._name), _droppedItems(NULL)
+Character::Character(const Character &other) : _name(other._name), _droppedItems(NULL)
 {
 	std::cout << "Character copy constructor called for " << _name << std::endl;
 	// Deep copy
@@ -29,7 +29,7 @@ Character::Character(const Character& other) : _name(other._name), _droppedItems
 }
 
 // Copy assignment operator
-Character& Character::operator=(const Character& other)
+Character &Character::operator=(const Character &other)
 {
 	if (this != &other)
 	{
@@ -51,7 +51,7 @@ Character& Character::operator=(const Character& other)
 			delete temp;
 		}
 
-		//Deep copy new inventory
+		// Deep copy new inventory
 		for (int i = 0; i < 4; i++)
 		{
 			if (other._inventory[i])
@@ -88,11 +88,12 @@ Character::~Character()
 }
 
 // Public methods implementation
-std::string const & Character::getName() const {
+std::string const &Character::getName() const
+{
 	return _name;
 }
 
-void Character::equip(AMateria* m)
+void Character::equip(AMateria *m)
 {
 	if (!m)
 		return;
@@ -130,8 +131,8 @@ void Character::unequip(int idx)
 	}
 }
 
-void Character::use(int idx, ICharacter& target)
+void Character::use(int idx, ICharacter &target)
 {
-	 if (idx >= 0 && idx < 4 && _inventory[idx])
+	if (idx >= 0 && idx < 4 && _inventory[idx])
 		_inventory[idx]->use(target);
 }

@@ -9,18 +9,18 @@ int main()
 
 	// Create MateriaSource and learn materias
 	std::cout << "\n--- Creating MateriaSource ---" << std::endl;
-	IMateriaSource* src = new MateriaSource();
+	IMateriaSource *src = new MateriaSource();
 	src->learnMateria(new Ice());
 	src->learnMateria(new Cure());
 
 	// Create characters
-	ICharacter* bob = new Character("Bob");
-	ICharacter* alice = new Character("Alice");
+	ICharacter *bob = new Character("Bob");
+	ICharacter *alice = new Character("Alice");
 
 	// Test 1: Create and equip materias from source
 	std::cout << "\n--- Test 1: Create Materias from Source ---" << std::endl;
-	AMateria* ice1 = src->createMateria("ice");
-	AMateria* cure1 = src->createMateria("cure");
+	AMateria *ice1 = src->createMateria("ice");
+	AMateria *cure1 = src->createMateria("cure");
 	bob->equip(ice1);
 	bob->equip(cure1);
 	bob->use(0, *alice);
@@ -28,7 +28,7 @@ int main()
 
 	// Test 2: Create unknown type (should return NULL)
 	std::cout << "\n--- Test 2: Create Unknown Type ---" << std::endl;
-	AMateria* unknown = src->createMateria("fire");
+	AMateria *unknown = src->createMateria("fire");
 	if (unknown == NULL)
 		std::cout << "Unknown materia type returns NULL ✓" << std::endl;
 
@@ -36,33 +36,33 @@ int main()
 	std::cout << "\n--- Test 3: Full Inventory (4 slots) ---" << std::endl;
 	bob->equip(src->createMateria("ice"));
 	bob->equip(src->createMateria("cure"));
-	AMateria* extra = src->createMateria("ice");
+	AMateria *extra = src->createMateria("ice");
 	bob->equip(extra); // Should fail - inventory full
-	delete extra; // Must delete since not equipped
+	delete extra;	   // Must delete since not equipped
 
 	// Test 4: Unequip and reuse slot
 	std::cout << "\n--- Test 4: Unequip and Re-use Slot ---" << std::endl;
 	bob->use(0, *alice);
-	bob->unequip(0); // Drop ice
-	bob->use(0, *alice); // Should do nothing (slot empty)
+	bob->unequip(0);						// Drop ice
+	bob->use(0, *alice);					// Should do nothing (slot empty)
 	bob->equip(src->createMateria("cure")); // Fill slot 0 again
-	bob->use(0, *alice); // Should work now
+	bob->use(0, *alice);					// Should work now
 
 	// Test 5: Invalid operations
 	std::cout << "\n--- Test 5: Invalid Operations ---" << std::endl;
-	alice->use(0, *bob); // Empty slot
+	alice->use(0, *bob);  // Empty slot
 	alice->use(-1, *bob); // Invalid index
-	alice->unequip(0); // Empty slot
-	alice->equip(NULL); // NULL materia
+	alice->unequip(0);	  // Empty slot
+	alice->equip(NULL);	  // NULL materia
 
 	// Test 6: MateriaSource with 4 templates
 	std::cout << "\n--- Test 6: MateriaSource Full (4 templates) ---" << std::endl;
-	IMateriaSource* src2 = new MateriaSource();
+	IMateriaSource *src2 = new MateriaSource();
 	src2->learnMateria(new Ice());
 	src2->learnMateria(new Cure());
 	src2->learnMateria(new Ice());
 	src2->learnMateria(new Cure());
- 	src2->learnMateria(new Ice()); // Should fail, but materia is deleted by learnMateria
+	src2->learnMateria(new Ice()); // Should fail, but materia is deleted by learnMateria
 
 	// Test 7: Copy constructor (deep copy proof)
 	std::cout << "\n--- Test 7: Copy Constructor (Deep Copy Proof) ---" << std::endl;
@@ -70,7 +70,7 @@ int main()
 	alice->equip(src->createMateria("cure"));
 
 	std::cout << "Creating copy of Alice..." << std::endl;
-	Character aliceCopy(*static_cast<Character*>(alice));
+	Character aliceCopy(*static_cast<Character *>(alice));
 
 	std::cout << "\n[Before modifications]" << std::endl;
 	std::cout << "Original Alice slot 0: ";

@@ -7,14 +7,14 @@ Brain::Brain()
 }
 
 // Copy constructor
-Brain::Brain(const Brain& other)
+Brain::Brain(const Brain &other)
 {
 	std::cout << "Brain copy constructor called" << std::endl;
 	*this = other;
 }
 
 // Copy assignment operator
-Brain& Brain::operator=(const Brain& other)
+Brain &Brain::operator=(const Brain &other)
 {
 	std::cout << "Brain copy assignment operator called" << std::endl;
 	if (this != &other)
@@ -32,7 +32,7 @@ Brain::~Brain()
 }
 
 // Public methods implementation
-void Brain::setIdea(int index, const std::string& idea)
+void Brain::setIdea(int index, const std::string &idea)
 {
 	if (index >= 0 && index < 100)
 		ideas[index] = idea;

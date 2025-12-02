@@ -9,7 +9,7 @@ MateriaSource::MateriaSource()
 }
 
 // Copy constructor
-MateriaSource::MateriaSource(const MateriaSource& other)
+MateriaSource::MateriaSource(const MateriaSource &other)
 {
 	std::cout << "MateriaSource copy constructor called" << std::endl;
 	for (int i = 0; i < 4; i++)
@@ -22,7 +22,7 @@ MateriaSource::MateriaSource(const MateriaSource& other)
 }
 
 // Copy assignment operator
-MateriaSource& MateriaSource::operator=(const MateriaSource& other)
+MateriaSource &MateriaSource::operator=(const MateriaSource &other)
 {
 	std::cout << "MateriaSource copy assignment operator called" << std::endl;
 	if (this != &other)
@@ -57,7 +57,7 @@ MateriaSource::~MateriaSource()
 }
 
 // Public methods implementation
-void MateriaSource::learnMateria(AMateria* m)
+void MateriaSource::learnMateria(AMateria *m)
 {
 	if (!m)
 		return;
@@ -66,15 +66,15 @@ void MateriaSource::learnMateria(AMateria* m)
 		if (!_templates[i])
 		{
 			_templates[i] = m->clone();
-			delete m; // Take ownership and delete after cloning
-			return ;
+			delete m; // Delete after cloning
+			return;
 		}
 	}
 	std::cout << "Full capacity - Cannot learn anything else" << std::endl;
 	delete m; // Delete if not learned
 }
 
-AMateria* MateriaSource::createMateria(std::string const & type)
+AMateria *MateriaSource::createMateria(std::string const &type)
 {
 	for (int i = 0; i < 4; i++)
 	{

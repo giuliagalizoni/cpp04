@@ -8,13 +8,13 @@ WrongCat::WrongCat() : WrongAnimal()
 }
 
 // Copy constructor
-WrongCat::WrongCat(const WrongCat& other) : WrongAnimal(other)
+WrongCat::WrongCat(const WrongCat &other) : WrongAnimal(other)
 {
 	std::cout << "WrongCat copy constructor called" << std::endl;
 }
 
 // Copy assignment operator
-WrongCat& WrongCat::operator=(const WrongCat& other)
+WrongCat &WrongCat::operator=(const WrongCat &other)
 {
 	std::cout << "WrongCat copy assignment operator called" << std::endl;
 	if (this != &other)
@@ -33,5 +33,3 @@ void WrongCat::makeSound() const
 {
 	std::cout << "miau" << std::endl;
 }
-
-

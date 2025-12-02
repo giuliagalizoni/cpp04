@@ -7,14 +7,14 @@ AAnimal::AAnimal()
 }
 
 // Copy constructor
-AAnimal::AAnimal(const AAnimal& other)
+AAnimal::AAnimal(const AAnimal &other)
 {
 	std::cout << "AAnimal copy constructor called" << std::endl;
 	*this = other;
 }
 
 // Copy assignment operator
-AAnimal& AAnimal::operator=(const AAnimal& other)
+AAnimal &AAnimal::operator=(const AAnimal &other)
 {
 	std::cout << "AAnimal copy assignment operator called" << std::endl;
 	if (this != &other)
