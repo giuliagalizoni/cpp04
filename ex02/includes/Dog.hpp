@@ -2,7 +2,6 @@
 #define DOG_HPP
 
 #include <iostream>
-#include <string>
 #include "AAnimal.hpp"
 #include "Brain.hpp"
 

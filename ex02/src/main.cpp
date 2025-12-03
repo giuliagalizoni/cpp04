@@ -4,7 +4,7 @@
 
 int main()
 {
-	// AAnimal cannot be instanciated - Does not compile tests:
+	//AAnimal cannot be instanciated - Does not compile tests:
 	// AAnimal animal;
 	// AAnimal *animal = new AAnimal();
 
