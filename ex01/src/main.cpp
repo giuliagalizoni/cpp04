@@ -48,8 +48,8 @@ void deepCopyTestDog()
 	std::cout << "  Idea 1: " << copiedDog->getBrain()->getIdea(1) << std::endl;
 	std::cout << "  Idea 2: " << copiedDog->getBrain()->getIdea(2) << std::endl;
 
-	std::cout << "\n--- Modifying copied Dog's brain (PROOF OF DEEP COPY) ---" << std::endl;
-	copiedDog->getBrain()->setIdea(0, "I love treats instead");
+	std::cout << "\n--- Modifying copied Dog's brain ---" << std::endl;
+	copiedDog->getBrain()->setIdea(0, "I love treats");
 	copiedDog->getBrain()->setIdea(1, "Sleep all day");
 
 	std::cout << "\nOriginal Dog's ideas (should be UNCHANGED):" << std::endl;
@@ -65,11 +65,6 @@ void deepCopyTestDog()
 	std::cout << "\n--- Comparing Brain pointers (should be DIFFERENT) ---" << std::endl;
 	std::cout << "Original Brain address: " << originalDog->getBrain() << std::endl;
 	std::cout << "Copied Brain address:   " << copiedDog->getBrain() << std::endl;
-
-	if (originalDog->getBrain() != copiedDog->getBrain())
-		std::cout << "✓ SUCCESS: Brain pointers are different (deep copy confirmed)" << std::endl;
-	else
-		std::cout << "✗ FAIL: Brain pointers are the same (shallow copy!)" << std::endl;
 
 	std::cout << "\n--- Deleting dogs ---" << std::endl;
 	delete originalDog;
@@ -153,7 +148,7 @@ void assignmentOperatorDeepCopyTest()
 	std::cout << "  Idea 0: " << dog2.getBrain()->getIdea(0) << std::endl;
 	std::cout << "  Idea 1: " << dog2.getBrain()->getIdea(1) << std::endl;
 
-	std::cout << "\n--- Modifying dog2's brain (PROOF OF DEEP COPY) ---" << std::endl;
+	std::cout << "\n--- Modifying dog2's brain ---" << std::endl;
 	dog2.getBrain()->setIdea(0, "Modified after assignment");
 
 	std::cout << "\nDog1's ideas (should be UNCHANGED):" << std::endl;
@@ -171,8 +166,18 @@ void assignmentOperatorDeepCopyTest()
 	std::cout << "\n--- Destructors ---" << std::endl;
 }
 
+void subjectTests()
+{
+	std::cout << "\n========== SUBJECT TEST ==========" << std::endl;
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
+	delete j;
+	delete i;
+}
+
 int main()
 {
+	subjectTests();
 	basicTests();
 	deepCopyTestDog();
 	deepCopyTestCat();
