@@ -4,7 +4,7 @@
 WrongCat::WrongCat() : WrongAnimal()
 {
 	type = "Cat";
-	std::cout << type << " default constructor called" << std::endl;
+	std::cout << "WrongCat default constructor called" << std::endl;
 }
 
 // Copy constructor

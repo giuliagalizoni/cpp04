@@ -2,7 +2,6 @@
 # define WRONGCAT_HPP
 
 # include <iostream>
-# include <string>
 # include "WrongAnimal.hpp"
 
 class WrongCat : public WrongAnimal
@@ -13,9 +12,7 @@ class WrongCat : public WrongAnimal
 		WrongCat& operator=(const WrongCat& other);
 		~WrongCat();
 
-		// Public methods
 		void	makeSound() const;
-		// Getters and setters
 };
 
 #endif
