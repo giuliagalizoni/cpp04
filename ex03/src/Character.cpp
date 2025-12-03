@@ -96,7 +96,10 @@ std::string const &Character::getName() const
 void Character::equip(AMateria *m)
 {
 	if (!m)
+	{
+		std::cout << "Item not found on " << _name << "'s inventory. Cannot equip " << std::endl;
 		return;
+	}
 	for (int i = 0; i < 4; i++)
 	{
 		if (!_inventory[i])
@@ -113,10 +116,9 @@ void Character::unequip(int idx)
 {
 	if (idx < 0 || idx >= 4 || !_inventory[idx])
 	{
-		std::cout << "Item not found on " << _name << "'s inventory. Cannot equip " << std::endl;
+		std::cout << "Item not found on " << _name << "'s inventory. Cannot unequip " << std::endl;
 		return;
 	}
-
 	if (_inventory[idx])
 	{
 		// keep dropped item
@@ -135,4 +137,6 @@ void Character::use(int idx, ICharacter &target)
 {
 	if (idx >= 0 && idx < 4 && _inventory[idx])
 		_inventory[idx]->use(target);
+	else
+		std::cout << "Item not found on " << _name << "'s inventory. Cannot use " << std::endl;
 }
